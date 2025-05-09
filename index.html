@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="JT-GUIAgent: A Planner-Grounder Agent for Reliable GUI Interaction developed by China Mobile's Jiutian">
+  <meta property="og:title" content="JT-GUIAgent: A Planner-Grounder Agent for Reliable GUI Interaction"/>
+  <meta property="og:description" content="Two-phase collaborative framework for systematic GUI task execution"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+  <meta name="twitter:title" content="JT-GUIAgent: Reliable GUI Interaction Agent">
+  <meta name="twitter:description" content="Two-phase framework for autonomous GUI tasks">
+  <meta name="twitter:image" content="static/images/jiutian_logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="GUI Agent, Autonomous Agents, LLM, AI, China Mobile, Jiutian">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>JT-GUIAgent: A Planner-Grounder Agent for Reliable GUI Interaction</title>
+  <link rel="icon" type="image/x-icon" href="static/images/jiutian_logo_mini.png">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+
+  <style>
+    body {
+      font-family: 'Noto Sans', sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+    .hero {
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    }
+    .publication-title {
+      margin-bottom: 1rem;
+    }
+    .section {
+      padding: 3rem 1.5rem;
+    }
+    .content h2, .content h3 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    .content h2 {
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.5rem;
+    }
+    .message {
+      margin: 2rem 0;
+      box-shadow: 0 2px 3px rgba(10,10,10,0.1);
+    }
+    .message-header {
+      font-weight: bold;
+    }
+    table {
+      width: 100%;
+      margin: 1.5rem 0;
+      border-collapse: collapse;
+    }
+    table th, table td {
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+    table th {
+      background-color: #f5f5f5;
+      font-weight: bold;
+    }
+    video {
+      width: 100%;
+      max-width: 800px;
+      margin: 1rem 0;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      border-radius: 4px;
+    }
+    iframe {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin: 1rem 0;
+    }
+    .image-caption {
+      margin-top: 0.5rem;
+      font-style: italic;
+      text-align: center;
+    }
+    .columns {
+      margin-bottom: 2rem;
+    }
+    .box {
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 3px rgba(10,10,10,0.1);
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero is-medium">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">JT-GUIAgent: A Planner-Grounder Agent for Reliable GUI Interaction</h1>
+            <div class="item">
+              <img src="static/images/jiutian_logo.png" alt="China Mobile Jiutian Logo" width="300">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3 has-text-centered">Abstract</h2>
+          <div class="content has-text-justified box">
+            <p>
+              <strong>JT-GUIAgent</strong>, developed by <strong>China Mobile's Jiutian</strong>, is a <strong>GUI Agent</strong> built upon a <strong>multimodal large language model (LLM)</strong> and a <strong>two-phase collaborative framework</strong>. By decoupling the decision-making process of autonomous mobile agents into <strong>global planning (Planner)</strong> and <strong>local grounding (Grounder)</strong>, JT-GUIAgent ensures systematic task execution, significantly reducing confusion when handling complex tasks and improving overall accuracy.
+            </p>
+            <p>
+              The <strong>Planner</strong> and <strong>Grounder</strong> operate independently, allowing for separate optimization and evaluation of each module. This modular design enables rapid adaptation to new application scenarios or task types without requiring extensive architectural changes, demonstrating exceptional <strong>flexibility</strong> and <strong>scalability</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column">
+          <figure class="image is-16by9">
+            <img src="static/images/workflow.png" alt="JT-GUIAgent Workflow Diagram" style="border-radius: 6px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+          </figure>
+          <p class="image-caption"><strong>Figure 1:</strong> JT-GUIAgent Workflow</p>
+        </div>
+      </div>
+
+      <div class="content">
+        <h2 class="title is-3">Key Components</h2>
+        <div class="box">
+          <h3 class="title is-4 has-text-info">Planner: High-Level Task Orchestration</h3>
+          <p>The Planner leverages a structured prompt template that incorporates:</p>
+          <ul>
+            <li><strong>Action space selection</strong></li>
+            <li><strong>Task decomposition logic</strong></li>
+            <li><strong>Execution guidelines</strong></li>
+            <li><strong>Chain-of-thought reasoning</strong></li>
+          </ul>
+          <p>This design significantly enhances the <strong>multi-step planning</strong> capability of the general-purpose multimodal large model in complex environments.</p>
+        </div>
+
+        <div class="box">
+          <h3 class="title is-4 has-text-info">Grounder: Precise Element Localization</h3>
+          <p>The Grounder employs an enhanced training strategy, utilizing:</p>
+          <ul>
+            <li>Extensive open-source datasets of screenshots and UI element icons</li>
+            <li>Custom synthetic data simulating <strong>Chinese app interfaces</strong> for improved localization</li>
+          </ul>
+          <p>Fine-tuned on a general-purpose multimodal large model, the Grounder achieves (ScreenSpot-V2 benchmark):</p>
+          <ul>
+            <li><strong>97.2%</strong> accuracy in mobile text component recognition</li>
+            <li><strong>82.5%</strong> accuracy in mobile icon component recognition</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3 class="title is-4 has-text-info">Performance & Real-World Applications</h3>
+          <ul>
+            <li><strong>60%</strong> end-to-end task success rate in the AndroidWorld simulation environment</li>
+            <li>Reliable execution of real-world tasks (e.g., video playing, flight booking, hotel reservation, train ticket purchase) in <strong>Chinese apps</strong></li>
+          </ul>
+
+        </div>
+
+        <h2 class="title is-3">Methodology</h2>
+        <div class="box">
+          <h3 class="title is-4">Workflow Overview</h3>
+          <ol>
+            <li>The user defines a goal (e.g., <i>"Record an audio clip using Audio Recorder app and save it."</i>).</li>
+            <li><strong>JT−GUIAgent</strong> enters a loop with Android Control Service:
+                <ul>
+                    <li>Sends <strong>action commands</strong></li>
+                    <li>Receives <strong>post−execution screenshots</strong></li>
+                </ul>
+            </li>
+            <li>The loop continues until the task is completed.</li>
+          </ol>
+        </div>
+
+        <div class="box">
+          <h3 class="title is-4">Planner−Grounder Collaboration</h3>
+          <ul>
+            <li><strong>Planner</strong> processes the user goal and contextual information to determine the next action.
+                <ul>
+                    <li>If no element localization is needed (e.g., <i>"Open Audio Recorder app"</i>), the command is sent directly.</li>
+                    <li>If localization is required (e.g., <i>"Click the red REC icon"</i>), the <strong>Grounder</strong> is activated.</li>
+                </ul>
+            </li>
+            <li><strong>Grounder</strong> analyzes the screenshot and target description, returning <strong>pixel coordinates</strong> for precise interaction.</li>
+          </ul>
+        </div>
+
+        <div class="box">
+          <h3 class="title is-4">Planner: Advanced Prompt Engineering</h3>
+          <ul>
+            <li>
+                <strong>Structured Instruction Design</strong>
+                <ul>
+                    <li>Modular role definition, action framework, and step−by−step guidelines</li>
+                    <li>Tabular action space + JSON formatting for readability and machine parsing</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Context Enrichment</strong>
+                <ul>
+                    <li>App lists, real−time timestamps, and action history for state tracking</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Constrained Output Control</strong>
+                <ul>
+                    <li>Strict <strong>Thought/Action</strong> response format</li>
+                    <li>Unambiguous element descriptions + JSON−standardized output</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Error Handling</strong>
+                <ul>
+                    <li>Fallback strategies + explicit exception−handling protocols</li>
+                </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div class="box">
+          <h3 class="title is-4">Grounder: Enhanced Training & Localization</h3>
+          <ul>
+            <li>
+                <strong>Data Augmentation</strong>
+                <ul>
+                    <li>Diverse open-source UI datasets</li>
+                    <li>Chinese app mockups for improved localization in local contexts</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Supervised Fine-Tuning (SFT)</strong>
+                <ul>
+                    <li>Task-specific prompts + optimized general-purpose multimodal large model</li>
+                    <li>ScreenSpot-V2 Benchmark Results:</li>
+                    <table class="table is-bordered is-striped">
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Mobile</th>
+                                <th>Web</th>
+                                <th>Desktop</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Text</td>
+                                <td><strong>97.2%</strong></td>
+                                <td>88.0%</td>
+                                <td>85.6%</td>
+                            </tr>
+                            <tr>
+                                <td>Icon</td>
+                                <td><strong>82.5%</strong></td>
+                                <td>68.5%</td>
+                                <td>55.7%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><i>(Leaderboard: <a href="https://gui-agent.github.io/grounding-leaderboard/screenspot.html">Screenspot-V2 Benchmark</a>)</i></p>
+                </ul>
+            </li>
+          </ul>
+        </div>
+
+        <h2 class="title is-3">AndroidWorld</h2>
+        <div class="box">
+          <p>JT−GUIAgent can achieve a task completion rate of <strong>60%</strong> in the <strong>AndroidWorld</strong> Benchmark <i>(Leaderboard: <a href="https://docs.google.com/spreadsheets/d/1cchzP9dlTZ3WXQTfYNhh3avxoLipqHN75v1Tb86uhHo/edit?gid=0#gid=0">AndroidWorld Benchmark</a></i>). The details of specific tasks are as follows:</p>
+<!--          <iframe src="static/pdfs/result_info.pdf" width="100%" height="550" style="background: #f5f5f5; overflow: auto;"></iframe>-->
+          <img src="static/images/info_1.png" alt="China Mobile Jiutian Logo" width="1000">
+          <img src="static/images/info_2.png" alt="China Mobile Jiutian Logo" width="1000">
+          <br>
+          <br>
+          <p>The ability profiles under tasks of varying difficulties are as follows.</p>
+          <iframe src="static/pdfs/result_level.txt" width="100%" height="310" style="background: #f5f5f5; overflow: auto;"></iframe>
+        </div>
+
+        <h2 class="title is-3">Case Study</h2>
+        <div class="box">
+          <h3 class="title is-4">AndroidWorld</h3>
+          <h4 class="title is-5">[easy] AudioRecorderRecordAudio</h4>
+          <p><b>User Goal: </b> <i> Record an audio clip using Audio Recorder app and save it.</i></p>
+          <video controls>
+            <source src="static/videos/AudioRecorderRecordAudio.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+
+          <h4 class="title is-5">[medium] SimpleSmsSend</h4>
+          <p><b>User Goal: </b> <i> Send a text message using Simple SMS Messenger to +15132327939 with message: The night is dark and full of terrors.</i></p>
+          <video controls>
+            <source src="static/videos/SimpleSmsSend.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+
+          <h4 class="title is-5">[hard] SimpleCalendarAddOneEvent</h4>
+          <p><b>User Goal: </b> <i> In Simple Calendar Pro, create a calendar event on 2023-10-17 at 3h with the title 'Catch up on Annual Report' and the description 'We will prepare for software updates. Looking forward to productive discussions.'. The event should last for 60 mins.</i></p>
+          <video controls>
+            <source src="static/videos/SimpleCalendarAddOneEvent.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="box">
+          <h3 class="title is-4">Chinese App</h3>
+          <h4 class="title is-5">VideoPlay</h4>
+          <p><b>User Goal:</b> <i> 打开b站，播放《孤独的美食家第10季》的第2集。</i></p>
+          <video controls>
+            <source src="static/videos/CNAPP_PlayVideo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+
+          <h4 class="title is-5">TicketOrder</h4>
+          <p><b>User Goal:</b> <i>打开12306，购买5月20日北京出发到西安、最早一班的车票，其他要求：二等座、靠窗。</i></p>
+          <video controls>
+            <source src="static/videos/TicketOrder.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="box">
+          <h2 class="title is-3">Current Limitations of the Two-Phase Framework</h2>
+          <p>While the two-phase framework demonstrates strengths in hierarchical task decomposition, its real-time execution faces latency challenges.</p>
+
+          <p>To address these limitations, we propose:</p>
+          <ol>
+            <li><strong>Inference Acceleration</strong> - Leverage parallel computing, model pruning, and quantization techniques</li>
+            <li><strong>Lightweight Model Development</strong> - Optimize hyperparameters and integrate advanced algorithms</li>
+            <li><strong>Task Scheduling Enhancement</strong> - Implement efficient planning algorithms and dynamic resource allocation</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

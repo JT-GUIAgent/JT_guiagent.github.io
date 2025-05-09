@@ -188,122 +188,122 @@
 
         </div>
 
-        <h2 class="title is-3">Methodology</h2>
-        <div class="box">
-          <h3 class="title is-4">Workflow Overview</h3>
-          <ol>
-            <li>The user defines a goal (e.g., <i>"Record an audio clip using Audio Recorder app and save it."</i>).</li>
-            <li><strong>JT−GUIAgent</strong> enters a loop with Android Control Service:
-                <ul>
-                    <li>Sends <strong>action commands</strong></li>
-                    <li>Receives <strong>post−execution screenshots</strong></li>
-                </ul>
-            </li>
-            <li>The loop continues until the task is completed.</li>
-          </ol>
-        </div>
+<!--        <h2 class="title is-3">Methodology</h2>-->
+<!--        <div class="box">-->
+<!--          <h3 class="title is-4">Workflow Overview</h3>-->
+<!--          <ol>-->
+<!--            <li>The user defines a goal (e.g., <i>"Record an audio clip using Audio Recorder app and save it."</i>).</li>-->
+<!--            <li><strong>JT−GUIAgent</strong> enters a loop with Android Control Service:-->
+<!--                <ul>-->
+<!--                    <li>Sends <strong>action commands</strong></li>-->
+<!--                    <li>Receives <strong>post−execution screenshots</strong></li>-->
+<!--                </ul>-->
+<!--            </li>-->
+<!--            <li>The loop continues until the task is completed.</li>-->
+<!--          </ol>-->
+<!--        </div>-->
 
-        <div class="box">
-          <h3 class="title is-4">Planner−Grounder Collaboration</h3>
-          <ul>
-            <li><strong>Planner</strong> processes the user goal and contextual information to determine the next action.
-                <ul>
-                    <li>If no element localization is needed (e.g., <i>"Open Audio Recorder app"</i>), the command is sent directly.</li>
-                    <li>If localization is required (e.g., <i>"Click the red REC icon"</i>), the <strong>Grounder</strong> is activated.</li>
-                </ul>
-            </li>
-            <li><strong>Grounder</strong> analyzes the screenshot and target description, returning <strong>pixel coordinates</strong> for precise interaction.</li>
-          </ul>
-        </div>
+<!--        <div class="box">-->
+<!--          <h3 class="title is-4">Planner−Grounder Collaboration</h3>-->
+<!--          <ul>-->
+<!--            <li><strong>Planner</strong> processes the user goal and contextual information to determine the next action.-->
+<!--                <ul>-->
+<!--                    <li>If no element localization is needed (e.g., <i>"Open Audio Recorder app"</i>), the command is sent directly.</li>-->
+<!--                    <li>If localization is required (e.g., <i>"Click the red REC icon"</i>), the <strong>Grounder</strong> is activated.</li>-->
+<!--                </ul>-->
+<!--            </li>-->
+<!--            <li><strong>Grounder</strong> analyzes the screenshot and target description, returning <strong>pixel coordinates</strong> for precise interaction.</li>-->
+<!--          </ul>-->
+<!--        </div>-->
 
-        <div class="box">
-          <h3 class="title is-4">Planner: Advanced Prompt Engineering</h3>
-          <ul>
-            <li>
-                <strong>Structured Instruction Design</strong>
-                <ul>
-                    <li>Modular role definition, action framework, and step−by−step guidelines</li>
-                    <li>Tabular action space + JSON formatting for readability and machine parsing</li>
-                </ul>
-            </li>
-            <li>
-                <strong>Context Enrichment</strong>
-                <ul>
-                    <li>App lists, real−time timestamps, and action history for state tracking</li>
-                </ul>
-            </li>
-            <li>
-                <strong>Constrained Output Control</strong>
-                <ul>
-                    <li>Strict <strong>Thought/Action</strong> response format</li>
-                    <li>Unambiguous element descriptions + JSON−standardized output</li>
-                </ul>
-            </li>
-            <li>
-                <strong>Error Handling</strong>
-                <ul>
-                    <li>Fallback strategies + explicit exception−handling protocols</li>
-                </ul>
-            </li>
-          </ul>
-        </div>
+<!--        <div class="box">-->
+<!--          <h3 class="title is-4">Planner: Advanced Prompt Engineering</h3>-->
+<!--          <ul>-->
+<!--            <li>-->
+<!--                <strong>Structured Instruction Design</strong>-->
+<!--                <ul>-->
+<!--                    <li>Modular role definition, action framework, and step−by−step guidelines</li>-->
+<!--                    <li>Tabular action space + JSON formatting for readability and machine parsing</li>-->
+<!--                </ul>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <strong>Context Enrichment</strong>-->
+<!--                <ul>-->
+<!--                    <li>App lists, real−time timestamps, and action history for state tracking</li>-->
+<!--                </ul>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <strong>Constrained Output Control</strong>-->
+<!--                <ul>-->
+<!--                    <li>Strict <strong>Thought/Action</strong> response format</li>-->
+<!--                    <li>Unambiguous element descriptions + JSON−standardized output</li>-->
+<!--                </ul>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <strong>Error Handling</strong>-->
+<!--                <ul>-->
+<!--                    <li>Fallback strategies + explicit exception−handling protocols</li>-->
+<!--                </ul>-->
+<!--            </li>-->
+<!--          </ul>-->
+<!--        </div>-->
 
-        <div class="box">
-          <h3 class="title is-4">Grounder: Enhanced Training & Localization</h3>
-          <ul>
-            <li>
-                <strong>Data Augmentation</strong>
-                <ul>
-                    <li>Diverse open-source UI datasets</li>
-                    <li>Chinese app mockups for improved localization in local contexts</li>
-                </ul>
-            </li>
-            <li>
-                <strong>Supervised Fine-Tuning (SFT)</strong>
-                <ul>
-                    <li>Task-specific prompts + optimized general-purpose multimodal large model</li>
-                    <li>ScreenSpot-V2 Benchmark Results:</li>
-                    <table class="table is-bordered is-striped">
-                        <thead>
-                            <tr>
-                                <th>Component</th>
-                                <th>Mobile</th>
-                                <th>Web</th>
-                                <th>Desktop</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Text</td>
-                                <td><strong>97.2%</strong></td>
-                                <td>88.0%</td>
-                                <td>85.6%</td>
-                            </tr>
-                            <tr>
-                                <td>Icon</td>
-                                <td><strong>82.5%</strong></td>
-                                <td>68.5%</td>
-                                <td>55.7%</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <p><i>(Leaderboard: <a href="https://gui-agent.github.io/grounding-leaderboard/screenspot.html">Screenspot-V2 Benchmark</a>)</i></p>
-                </ul>
-            </li>
-          </ul>
-        </div>
+<!--        <div class="box">-->
+<!--          <h3 class="title is-4">Grounder: Enhanced Training & Localization</h3>-->
+<!--          <ul>-->
+<!--            <li>-->
+<!--                <strong>Data Augmentation</strong>-->
+<!--                <ul>-->
+<!--                    <li>Diverse open-source UI datasets</li>-->
+<!--                    <li>Chinese app mockups for improved localization in local contexts</li>-->
+<!--                </ul>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <strong>Supervised Fine-Tuning (SFT)</strong>-->
+<!--                <ul>-->
+<!--                    <li>Task-specific prompts + optimized general-purpose multimodal large model</li>-->
+<!--                    <li>ScreenSpot-V2 Benchmark Results:</li>-->
+<!--                    <table class="table is-bordered is-striped">-->
+<!--                        <thead>-->
+<!--                            <tr>-->
+<!--                                <th>Component</th>-->
+<!--                                <th>Mobile</th>-->
+<!--                                <th>Web</th>-->
+<!--                                <th>Desktop</th>-->
+<!--                            </tr>-->
+<!--                        </thead>-->
+<!--                        <tbody>-->
+<!--                            <tr>-->
+<!--                                <td>Text</td>-->
+<!--                                <td><strong>97.2%</strong></td>-->
+<!--                                <td>88.0%</td>-->
+<!--                                <td>85.6%</td>-->
+<!--                            </tr>-->
+<!--                            <tr>-->
+<!--                                <td>Icon</td>-->
+<!--                                <td><strong>82.5%</strong></td>-->
+<!--                                <td>68.5%</td>-->
+<!--                                <td>55.7%</td>-->
+<!--                            </tr>-->
+<!--                        </tbody>-->
+<!--                    </table>-->
+<!--                    <p><i>(Leaderboard: <a href="https://gui-agent.github.io/grounding-leaderboard/screenspot.html">Screenspot-V2 Benchmark</a>)</i></p>-->
+<!--                </ul>-->
+<!--            </li>-->
+<!--          </ul>-->
+<!--        </div>-->
 
-        <h2 class="title is-3">AndroidWorld</h2>
-        <div class="box">
-          <p>JT−GUIAgent can achieve a task completion rate of <strong>60%</strong> in the <strong>AndroidWorld</strong> Benchmark <i>(Leaderboard: <a href="https://docs.google.com/spreadsheets/d/1cchzP9dlTZ3WXQTfYNhh3avxoLipqHN75v1Tb86uhHo/edit?gid=0#gid=0">AndroidWorld Benchmark</a></i>). The details of specific tasks are as follows:</p>
-<!--          <iframe src="static/pdfs/result_info.pdf" width="100%" height="550" style="background: #f5f5f5; overflow: auto;"></iframe>-->
-          <img src="static/images/info_1.png" alt="China Mobile Jiutian Logo" width="1000">
-          <img src="static/images/info_2.png" alt="China Mobile Jiutian Logo" width="1000">
-          <br>
-          <br>
-          <p>The ability profiles under tasks of varying difficulties are as follows.</p>
-          <iframe src="static/pdfs/result_level.txt" width="100%" height="310" style="background: #f5f5f5; overflow: auto;"></iframe>
-        </div>
+<!--        <h2 class="title is-3">AndroidWorld</h2>-->
+<!--        <div class="box">-->
+<!--          <p>JT−GUIAgent can achieve a task completion rate of <strong>60%</strong> in the <strong>AndroidWorld</strong> Benchmark <i>(Leaderboard: <a href="https://docs.google.com/spreadsheets/d/1cchzP9dlTZ3WXQTfYNhh3avxoLipqHN75v1Tb86uhHo/edit?gid=0#gid=0">AndroidWorld Benchmark</a></i>). The details of specific tasks are as follows:</p>-->
+<!--&lt;!&ndash;          <iframe src="static/pdfs/result_info.pdf" width="100%" height="550" style="background: #f5f5f5; overflow: auto;"></iframe>&ndash;&gt;-->
+<!--          <img src="static/images/info_1.png" alt="China Mobile Jiutian Logo" width="1000">-->
+<!--          <img src="static/images/info_2.png" alt="China Mobile Jiutian Logo" width="1000">-->
+<!--          <br>-->
+<!--          <br>-->
+<!--          <p>The ability profiles under tasks of varying difficulties are as follows.</p>-->
+<!--          <iframe src="static/pdfs/result_level.txt" width="100%" height="310" style="background: #f5f5f5; overflow: auto;"></iframe>-->
+<!--        </div>-->
 
         <h2 class="title is-3">Case Study</h2>
         <div class="box">
